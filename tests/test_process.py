@@ -1,4 +1,3 @@
-
 import pytest
 
 from quezo.models.process import Process
@@ -56,10 +55,10 @@ def test_validate_other_requires_integer_fields(field: str, value: object) -> No
 @pytest.mark.parametrize(
     ("field", "value", "message"),
     [
-        ("arrival_time", -1, "arrival_time can not be negative"),
+        ("arrival_time", -1, "arrival_time cannot be negative"),
         ("burst_time", 0, "burst_time must be greater than zero"),
         ("burst_time", -1, "burst_time must be greater than zero"),
-        ("priority", -1, "priority can not be negative"),
+        ("priority", -1, "priority cannot be negative"),
     ],
 )
 def test_validate_other_rejects_out_of_range_values(
