@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+#ruff generated files
+.ruff_cache
+
+#pytest generated files
+.pytest_cache
