@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass
 class Process: 
     process_id : str
@@ -44,5 +45,7 @@ class Process:
             for dep in self.dependencies):
                 raise ValueError("dependencies must contain non-empty strings")
          
+p1 = Process("P1", arrival_time=1, burst_time=5, priority=2)
+print(p1)
 
-    
+Process("P2", arrival_time=-1, burst_time=3, priority=1)
