@@ -1,47 +1,52 @@
-
-# Quezo — System Design
+# Quezo System Design
 
 ## 1. Purpose
-This is a simulation of CPU job scheduling in which you can assinge jobs to multiple workers.
+
+Quezo simulates CPU job scheduling and lets users assign jobs to one or more
+workers.
 
 ## 2. Inputs
-- User provides a process with
-1. process id  
-2. arrival time  
-3. burst time  
-4. priority  
-5. dependencies  
+
+Users provide processes with the following attributes:
+
+1. Process ID
+2. Arrival time
+3. Burst time
+4. Priority
+5. Dependencies
 
 ## 3. Processing
-So basically what we do is we give take processes as an input from user, and create a workload,
-then we give the user the freedom of selecting a algorithm. FCFS, SJF or Priority Scheduling. 
-We then simulate visually how these algorithms work in the CPU.
+
+The simulator accepts processes as input and creates a workload. Users select
+an algorithm: FCFS, SJF, or Priority Scheduling. Quezo then visualizes how the
+selected algorithm schedules processes on the CPU.
 
 ## 4. Outputs
-What should the user see after a simulation?
-After the simulation user should see a gannt chart, scheduled job and a benchmark between python and rust.
 
+Simulation results should include a Gantt chart, the scheduled jobs, and
+performance metrics. A Python and Rust benchmark can be shown after both
+engines are implemented.
 
-## 5. Core concepts
-- Process:
- A simple process that will be assinged to CPU. 
-- Scheduling policy:
-    In this we will have to write policies about scheduling.(I don't understand much about this.)
-- Simulation configuration:  
-    A simulation config, which will have process and the algorithms,
-    basically a file which contains the assests to execute a simulation.
-- Execution interval:
-    Depends entirely on processes and jobs.
-- Simulation result:
-    A visual and statical result and benchamarks.
+## 5. Core Concepts
+
+- **Process:** A job that is assigned to the CPU.
+- **Scheduling policy:** Rules that determine which eligible process runs
+  next.
+- **Simulation configuration:** A file containing the processes and
+  algorithms for a simulation.
+- **Execution interval:** The time during which a process runs on a worker.
+- **Simulation result:** A summary of the simulation, including metrics and
+  benchmarks.
 
 ## 6. Constraints
 
-A process which contains any of the variable in negative considers invalid.  
-We are using validation of that as well.   
+Process scheduling values must not be negative. Input validation will enforce
+this rule and validate process IDs and dependency references according to the
+data model.
 
-What behavior must always be correct?(I'll figure this out.)
+Additional invariants will be defined as the simulation behavior is
+implemented.
 
-## 7. Out of scope for the MVP
-What features will not be implemented yet?
-The desktop UI, and rust engine.
+## 7. Out of Scope for the MVP
+
+The desktop UI and Rust engine are outside the scope of the MVP.
